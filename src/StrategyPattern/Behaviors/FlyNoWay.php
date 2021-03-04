@@ -4,10 +4,10 @@ namespace App\StrategyPattern\Behaviors;
 
 use App\StrategyPattern\Interfaces\FlyBehaviorInterface;
 
-class FlyWithWings implements FlyBehaviorInterface
+class FlyNoWay implements FlyBehaviorInterface
 {
     public function fly()
     {
-        echo "I’m flying!!\n";
+        echo "I can't fly\n";
     }
 }
