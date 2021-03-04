@@ -1,0 +1,13 @@
+{
+    "name": "simpsons3/design-pattern-guide",
+    "description": "Store design pattern code",
+    "type": "test",
+    "authors": [
+        {
+            "name": "simpsons3",
+            "email": "giangnguyen1997@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
