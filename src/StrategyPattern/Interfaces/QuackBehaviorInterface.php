@@ -1,6 +1,6 @@
 <?php
 
-namespace StrategyPattern\Interfaces;
+namespace App\StrategyPattern\Interfaces;
 
 interface QuackBehaviorInterface
 {
