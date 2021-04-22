@@ -6,13 +6,11 @@ use App\ObserverPattern\Interfaces\Subject;
 use App\ObserverPattern\Interfaces\Observer;
 use App\ObserverPattern\Interfaces\DisplayElement;
 
-class CurrentConditionsDisplay implements Observer, DisplayElement
+class ForecastDisplay implements Observer, DisplayElement
 {
-    private $temperature;
+    private $lastPressure = 0;
 
-    private $humidity;
-
-    private $pressure;
+    private $pressure = 0;
 
     public function __construct(Subject $weatherData)
     {
@@ -22,14 +20,18 @@ class CurrentConditionsDisplay implements Observer, DisplayElement
 
     public function update($data)
     {
-        $this->temperature = $data['temperature'];
-        $this->humidity = $data['humidity'];
+        $this->lastPressure = $this->pressure;
         $this->pressure = $data['pressure'];
         $this->display();
     }
 
     public function display()
     {
-        echo "Current conditions: " . $this->temperature . "F degrees and " . $this->humidity . "% humidity\n";
+        echo "Forecast: ";
+        if ($this->lastPressure >= $this->pressure) {
+            echo "Pressure increasing\n";
+        } else {
+            echo "Pressure decreasing\n";
+        }
     }
 }
