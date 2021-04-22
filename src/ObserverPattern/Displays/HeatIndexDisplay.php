@@ -6,13 +6,9 @@ use App\ObserverPattern\Interfaces\Subject;
 use App\ObserverPattern\Interfaces\Observer;
 use App\ObserverPattern\Interfaces\DisplayElement;
 
-class CurrentConditionsDisplay implements Observer, DisplayElement
+class HeatIndexDisplay implements Observer, DisplayElement
 {
-    private $temperature;
-
-    private $humidity;
-
-    private $pressure;
+    private $heatIndex = 0;
 
     public function __construct(Subject $weatherData)
     {
@@ -22,14 +18,17 @@ class CurrentConditionsDisplay implements Observer, DisplayElement
 
     public function update($data)
     {
-        $this->temperature = $data['temperature'];
-        $this->humidity = $data['humidity'];
-        $this->pressure = $data['pressure'];
+        $this->heatIndex = $this->calculateHeatIndex($data['temperature'], $data['humidity']);
         $this->display();
+    }
+
+    private function calculateHeatIndex($temp, $humidity)
+    {
+        return $temp * $humidity / rand(1, 20);
     }
 
     public function display()
     {
-        echo "Current conditions: " . $this->temperature . "F degrees and " . $this->humidity . "% humidity\n";
+        echo "HeatIndex: " . $this->heatIndex . "\n";
     }
 }

@@ -2,7 +2,7 @@
 
 namespace App\ObserverPattern\Interfaces;
 
-use Observer;
+use App\ObserverPattern\Interfaces\Observer;
 
 interface Subject
 {
@@ -10,5 +10,5 @@ interface Subject
 
     public function removeObserver(Observer $observer);
 
-    public function notifyObserver();
+    public function notifyObservers();
 }
