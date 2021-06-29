@@ -8,10 +8,12 @@ use App\ObserverPattern\WeatherStation;
 use App\DecoratorPattern\StarbuzzCoffee;
 use App\FactoryPattern\PizzaTestDrive;
 use App\SingletonPattern\ChocolateFactory;
+use App\CommandPattern\HomeAutomation;
 
 // new DuckSimulation();
 // new AdventureGame();
 // new WeatherStation();
 // new StarbuzzCoffee();
 // new PizzaTestDrive();
-new ChocolateFactory();
+// new ChocolateFactory();
+new HomeAutomation();
