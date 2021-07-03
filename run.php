@@ -9,6 +9,7 @@ use App\DecoratorPattern\StarbuzzCoffee;
 use App\FactoryPattern\PizzaTestDrive;
 use App\SingletonPattern\ChocolateFactory;
 use App\CommandPattern\HomeAutomation;
+use App\AdapterPattern\DuckTestDrive;
 
 // new DuckSimulation();
 // new AdventureGame();
@@ -16,4 +17,5 @@ use App\CommandPattern\HomeAutomation;
 // new StarbuzzCoffee();
 // new PizzaTestDrive();
 // new ChocolateFactory();
-new HomeAutomation();
+// new HomeAutomation();
+new DuckTestDrive();
