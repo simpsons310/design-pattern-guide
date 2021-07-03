@@ -10,6 +10,7 @@ use App\FactoryPattern\PizzaTestDrive;
 use App\SingletonPattern\ChocolateFactory;
 use App\CommandPattern\HomeAutomation;
 use App\AdapterPattern\DuckTestDrive;
+use App\FacadePattern\HomeTheaterTestDrive;
 
 // new DuckSimulation();
 // new AdventureGame();
@@ -18,4 +19,5 @@ use App\AdapterPattern\DuckTestDrive;
 // new PizzaTestDrive();
 // new ChocolateFactory();
 // new HomeAutomation();
-new DuckTestDrive();
+// new DuckTestDrive();
+new HomeTheaterTestDrive();
