@@ -13,6 +13,7 @@ use App\AdapterPattern\DuckTestDrive;
 use App\FacadePattern\HomeTheaterTestDrive;
 use App\TemplatePattern\BeverageDriveTest;
 use App\IteratorPattern\MenuTestDrive;
+use App\CompositePattern\MenuTestDrive as CompositeMenuTestDrive;
 
 // new DuckSimulation();
 // new AdventureGame();
@@ -24,4 +25,5 @@ use App\IteratorPattern\MenuTestDrive;
 // new DuckTestDrive();
 // new HomeTheaterTestDrive();
 // new BeverageDriveTest();
-new MenuTestDrive();
+// new MenuTestDrive();
+new CompositeMenuTestDrive();
