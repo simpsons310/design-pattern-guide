@@ -41,5 +41,10 @@ abstract class MenuComponent
         throw new UnsupportedOperationException();
     }
 
+    public function createIterator()
+    {
+        throw new UnsupportedOperationException();
+    }
+
     abstract public function print(): void;
 }

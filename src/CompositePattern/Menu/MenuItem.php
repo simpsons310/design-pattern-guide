@@ -2,6 +2,8 @@
 
 namespace App\CompositePattern\Menu;
 
+use App\CompositePattern\Iterators\NullIterator;
+
 class MenuItem extends MenuComponent
 {
     private string $name;
@@ -18,6 +20,11 @@ class MenuItem extends MenuComponent
         $this->description = $description;
         $this->vegetarian = $vegetarian;
         $this->price = $price;
+    }
+
+    public function createIterator()
+    {
+        return new NullIterator();
     }
 
     public function getName(): string

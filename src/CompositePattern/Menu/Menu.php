@@ -2,41 +2,47 @@
 
 namespace App\CompositePattern\Menu;
 
+use App\CompositePattern\Iterators\MenuIterator;
+use App\CompositePattern\Iterators\CompositeIterator;
+
 class Menu extends MenuComponent
 {
-    private array $menuComponents = [];
+    private $menuComponents;
 
     private string $name;
 
     private string $description;
 
+    private $iterator = null;
+
     public function __construct(string $name, string $description)
     {
         $this->name = $name;
         $this->description = $description;
+        $this->menuComponents = new MenuIterator();
+    }
+
+    public function createIterator()
+    {
+        if ($this->iterator == null) {
+            $this->iterator = new CompositeIterator($this->menuComponents);
+        }
+        return $this->iterator;
     }
 
     public function add(MenuComponent $menuComponent): void
     {
-        $this->menuComponents[] = $menuComponent;
+        $this->menuComponents->add($menuComponent);
     }
 
     public function remove(MenuComponent $menuComponent): void
     {
-        $length = count($this->menuComponents);
-        for ($i = 0; $i < $length; $i++) {
-            if (
-                $this->menuComponents[$i]->getName() == $menuComponent->getName() &&
-                $this->menuComponents[$i]->getDescription() == $menuComponent->getDescription()
-            ) {
-                unset($this->menuComponents[$i]);
-            }
-        }
+        $this->menuComponents->remove($menuComponent);
     }
 
     public function getChild($i): MenuComponent
     {
-        return $this->menuComponents[$i];
+        return $this->menuComponents->get($i);
     }
 
     public function getName(): string
@@ -55,7 +61,8 @@ class Menu extends MenuComponent
         echo ", " . $this->getDescription();
         echo "\n--------------------\n";
 
-        foreach ($this->menuComponents as $menuComponent) {
+        while ($this->menuComponents->hasNext()) {
+            $menuComponent = $this->menuComponents->next();
             $menuComponent->print();
         }
     }
