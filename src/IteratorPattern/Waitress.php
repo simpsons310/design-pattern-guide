@@ -4,7 +4,7 @@ namespace App\IteratorPattern;
 
 use App\IteratorPattern\Interfaces\Iterator;
 use App\IteratorPattern\Menus\DinerMenu;
-use App\IteratorPattern\Menus\PancakeHouseMenu;;
+use App\IteratorPattern\Menus\PancakeHouseMenu;
 use App\IteratorPattern\Menus\CafeMenu;
 
 class Waitress
@@ -18,7 +18,7 @@ class Waitress
     public function __construct(
         DinerMenu $dinerMenu,
         PancakeHouseMenu $pancakeHouseMenu,
-        CafeMenu $cafeMenu 
+        CafeMenu $cafeMenu
     ) {
         $this->dinerMenu = $dinerMenu;
         $this->pancakeHouseMenu = $pancakeHouseMenu;
