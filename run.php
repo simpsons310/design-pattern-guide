@@ -15,6 +15,7 @@ use App\TemplatePattern\BeverageDriveTest;
 use App\IteratorPattern\MenuTestDrive;
 use App\CompositePattern\MenuTestDrive as CompositeMenuTestDrive;
 use App\StatePattern\GumballMachineTestDrive;
+use App\ProxyPattern\PersonBeanTestDrive;
 
 // new DuckSimulation();
 // new AdventureGame();
@@ -28,4 +29,5 @@ use App\StatePattern\GumballMachineTestDrive;
 // new BeverageDriveTest();
 // new MenuTestDrive();
 // new CompositeMenuTestDrive();
-new GumballMachineTestDrive();
+// new GumballMachineTestDrive();
+new PersonBeanTestDrive();
