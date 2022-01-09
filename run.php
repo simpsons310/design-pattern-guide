@@ -16,6 +16,7 @@ use App\IteratorPattern\MenuTestDrive;
 use App\CompositePattern\MenuTestDrive as CompositeMenuTestDrive;
 use App\StatePattern\GumballMachineTestDrive;
 use App\ProxyPattern\PersonBeanTestDrive;
+use App\ProxyPattern\SimpleDownloaderTestDrive;
 
 // new DuckSimulation();
 // new AdventureGame();
@@ -30,4 +31,5 @@ use App\ProxyPattern\PersonBeanTestDrive;
 // new MenuTestDrive();
 // new CompositeMenuTestDrive();
 // new GumballMachineTestDrive();
-new PersonBeanTestDrive();
+// new PersonBeanTestDrive();
+new SimpleDownloaderTestDrive();
