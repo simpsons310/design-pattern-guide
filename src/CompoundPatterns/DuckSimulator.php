@@ -7,6 +7,8 @@ use App\CompoundPatterns\Ducks\DuckCall;
 use App\CompoundPatterns\Ducks\GooseAdaptor;
 use App\CompoundPatterns\Ducks\RedHeadDuck;
 use App\CompoundPatterns\Ducks\RubberDuck;
+use App\CompoundPatterns\Factories\AbstractDuckFactory;
+use App\CompoundPatterns\Factories\CountingDuckFactory;
 use App\CompoundPatterns\Geese\Goose;
 use App\CompoundPatterns\Interfaces\Quackable;
 use App\CompoundPatterns\Quackologists\QuackCounter;
@@ -15,18 +17,19 @@ class DuckSimulator
 {
     public function __construct()
     {
-        $this->simulateDucks();
+        $duckFactory = new CountingDuckFactory();
+        $this->simulateDucks($duckFactory);
     }
 
-    private function simulateDucks()
+    private function simulateDucks(AbstractDuckFactory $duckFactory)
     {
-        $mallardDuck = new QuackCounter(new MallardDuck());
-        $redHeadDuck = new QuackCounter(new RedHeadDuck());
-        $duckCall = new QuackCounter(new DuckCall());
-        $rubberDuck = new QuackCounter(new RubberDuck());
+        $mallardDuck = $duckFactory->createMallardDuck();
+        $redHeadDuck = $duckFactory->createRedHeadDuck();
+        $duckCall = $duckFactory->createDuckCall();
+        $rubberDuck = $duckFactory->createRubberDuck();
         $gooseDuck = new QuackCounter(new GooseAdaptor(new Goose()));
 
-        echo "Duck simulator\n";
+        echo "Duck simulator: With Abstract Factory\n";
 
         $this->simulate($mallardDuck);
         $this->simulate($redHeadDuck);
