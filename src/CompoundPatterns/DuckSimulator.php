@@ -9,6 +9,7 @@ use App\CompoundPatterns\Ducks\RedHeadDuck;
 use App\CompoundPatterns\Ducks\RubberDuck;
 use App\CompoundPatterns\Geese\Goose;
 use App\CompoundPatterns\Interfaces\Quackable;
+use App\CompoundPatterns\Quackologists\QuackCounter;
 
 class DuckSimulator
 {
@@ -19,11 +20,11 @@ class DuckSimulator
 
     private function simulateDucks()
     {
-        $mallardDuck = new MallardDuck();
-        $redHeadDuck = new RedHeadDuck();
-        $duckCall = new DuckCall();
-        $rubberDuck = new RubberDuck();
-        $gooseDuck = new GooseAdaptor(new Goose());
+        $mallardDuck = new QuackCounter(new MallardDuck());
+        $redHeadDuck = new QuackCounter(new RedHeadDuck());
+        $duckCall = new QuackCounter(new DuckCall());
+        $rubberDuck = new QuackCounter(new RubberDuck());
+        $gooseDuck = new QuackCounter(new GooseAdaptor(new Goose()));
 
         echo "Duck simulator\n";
 
@@ -32,6 +33,8 @@ class DuckSimulator
         $this->simulate($duckCall);
         $this->simulate($rubberDuck);
         $this->simulate($gooseDuck);
+
+        echo "The ducks quacked " . QuackCounter::getQuacks() . " times\n";
     }
 
     private function simulate(Quackable $duck)
