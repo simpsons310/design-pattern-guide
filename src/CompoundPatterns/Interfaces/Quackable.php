@@ -2,7 +2,7 @@
 
 namespace App\CompoundPatterns\Interfaces;
 
-interface Quackable
+interface Quackable extends QuackObservable
 {
     public function quack();
 }

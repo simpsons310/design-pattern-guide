@@ -9,14 +9,19 @@ use App\CompoundPatterns\Factories\CountingDuckFactory;
 use App\CompoundPatterns\Geese\Goose;
 use App\CompoundPatterns\Interfaces\Quackable;
 use App\CompoundPatterns\Quackologists\QuackCounter;
+use App\CompoundPatterns\Quackologists\Quackologist;
 
 class DuckSimulator
 {
     public function __construct()
     {
         $duckFactory = new CountingDuckFactory();
-        // $this->simulateDucks($duckFactory);
+        $this->simulateDucks($duckFactory);
+        echo "-----------------------------\n";
         $this->simulateFlockOfDucks($duckFactory);
+        echo "-----------------------------\n";
+        $this->simulateWithObserver($duckFactory);
+        echo "-----------------------------\n";
     }
 
     private function simulateDucks(AbstractDuckFactory $duckFactory)
@@ -71,6 +76,30 @@ class DuckSimulator
 
         echo "Duck simulator: Mallard Flock Simulator\n";
         $this->simulate($flockOfMallards);
+
+        echo "The ducks quacked " . QuackCounter::getQuacks() . " times\n";
+    }
+
+    public function simulateWithObserver(AbstractDuckFactory $duckFactory)
+    {
+        $mallardDuck = $duckFactory->createMallardDuck();
+        $redHeadDuck = $duckFactory->createRedHeadDuck();
+        $duckCall = $duckFactory->createDuckCall();
+        $rubberDuck = $duckFactory->createRubberDuck();
+        $gooseDuck = new QuackCounter(new GooseAdaptor(new Goose()));
+        $flockOfDucks = new Flock();
+
+        $flockOfDucks->add($mallardDuck);
+        $flockOfDucks->add($redHeadDuck);
+        $flockOfDucks->add($duckCall);
+        $flockOfDucks->add($rubberDuck);
+        $flockOfDucks->add($gooseDuck);
+
+        $quackologist = new Quackologist();
+        $flockOfDucks->registerObserver($quackologist);
+
+        echo "Duck simulator: With Observer\n";
+        $this->simulate($flockOfDucks);
 
         echo "The ducks quacked " . QuackCounter::getQuacks() . " times\n";
     }

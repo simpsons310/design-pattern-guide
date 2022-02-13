@@ -2,6 +2,7 @@
 
 namespace App\CompoundPatterns\Quackologists;
 
+use App\CompoundPatterns\Interfaces\Observer;
 use App\CompoundPatterns\Interfaces\Quackable;
 
 class QuackCounter implements Quackable
@@ -24,5 +25,15 @@ class QuackCounter implements Quackable
     public static function getQuacks()
     {
         return static::$numberOfQuack;
+    }
+
+    public function registerObserver(Observer $observer)
+    {
+        $this->duck->registerObserver($observer);
+    }
+
+    public function notifyObservers()
+    {
+        $this->duck->notifyObservers();
     }
 }
