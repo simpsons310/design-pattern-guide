@@ -18,6 +18,8 @@ use App\StatePattern\GumballMachineTestDrive;
 use App\ProxyPattern\PersonBeanTestDrive;
 use App\ProxyPattern\SimpleDownloaderTestDrive;
 use App\CompoundPatterns\DuckSimulator;
+use App\MVCPattern\Application;
+use App\MVCPattern\MVCTest;
 
 // new DuckSimulation();
 // new AdventureGame();
@@ -34,4 +36,5 @@ use App\CompoundPatterns\DuckSimulator;
 // new GumballMachineTestDrive();
 // new PersonBeanTestDrive();
 // new SimpleDownloaderTestDrive();
-new DuckSimulator();
+// new DuckSimulator();
+new MVCTest(); // run: php -s localhost/{port} -> http://locahost:{port}/run.php
