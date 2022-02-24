@@ -20,6 +20,7 @@ use App\ProxyPattern\SimpleDownloaderTestDrive;
 use App\CompoundPatterns\DuckSimulator;
 use App\MVCPattern\Application;
 use App\MVCPattern\MVCTest;
+use App\BridgePattern\ControlTV;
 
 // new DuckSimulation();
 // new AdventureGame();
@@ -37,4 +38,5 @@ use App\MVCPattern\MVCTest;
 // new PersonBeanTestDrive();
 // new SimpleDownloaderTestDrive();
 // new DuckSimulator();
-new MVCTest(); // run: php -s localhost/{port} -> http://locahost:{port}/run.php
+// new MVCTest(); // run: php -s localhost/{port} -> http://locahost:{port}/run.php
+new ControlTV();
