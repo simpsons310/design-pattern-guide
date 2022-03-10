@@ -22,6 +22,7 @@ use App\MVCPattern\Application;
 use App\MVCPattern\MVCTest;
 use App\BridgePattern\ControlTV;
 use App\BridgePattern\PageRenderer;
+use App\BuilderPattern\Planner;
 
 // new DuckSimulation();
 // new AdventureGame();
@@ -41,4 +42,5 @@ use App\BridgePattern\PageRenderer;
 // new DuckSimulator();
 // new MVCTest(); // run: php -s localhost/{port} -> http://locahost:{port}/run.php
 // new ControlTV();
-new PageRenderer();
+// new PageRenderer();
+new Planner();
