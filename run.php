@@ -24,6 +24,7 @@ use App\BridgePattern\ControlTV;
 use App\BridgePattern\PageRenderer;
 use App\BuilderPattern\Planner;
 use App\ChainOfResponsibilityPattern\MailHandler;
+use App\FlyweightPattern\FlyWeightManager;
 use App\FlyweightPattern\TreeManager;
 
 // new DuckSimulation();
@@ -47,4 +48,5 @@ use App\FlyweightPattern\TreeManager;
 // new PageRenderer();
 // new Planner();
 // new MailHandler();
-new TreeManager();
+// new TreeManager();
+new FlyWeightManager();
