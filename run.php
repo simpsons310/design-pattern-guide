@@ -27,6 +27,7 @@ use App\ChainOfResponsibilityPattern\MailHandler;
 use App\FlyweightPattern\FlyWeightManager;
 use App\FlyweightPattern\TreeManager;
 use App\InterpreterPattern\DuckPondSimulator;
+use App\MediatorPattern\HouseOfTheFuture;
 
 // new DuckSimulation();
 // new AdventureGame();
@@ -51,4 +52,5 @@ use App\InterpreterPattern\DuckPondSimulator;
 // new MailHandler();
 // new TreeManager();
 // new FlyWeightManager();
-new DuckPondSimulator();
+// new DuckPondSimulator();
+new HouseOfTheFuture();
