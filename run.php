@@ -28,6 +28,7 @@ use App\FlyweightPattern\FlyWeightManager;
 use App\FlyweightPattern\TreeManager;
 use App\InterpreterPattern\DuckPondSimulator;
 use App\MediatorPattern\HouseOfTheFuture;
+use App\MemetoPattern\MemetoTestDriven;
 
 // new DuckSimulation();
 // new AdventureGame();
@@ -53,4 +54,5 @@ use App\MediatorPattern\HouseOfTheFuture;
 // new TreeManager();
 // new FlyWeightManager();
 // new DuckPondSimulator();
-new HouseOfTheFuture();
+// new HouseOfTheFuture();
+new MemetoTestDriven();
