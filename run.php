@@ -30,6 +30,7 @@ use App\InterpreterPattern\DuckPondSimulator;
 use App\MediatorPattern\HouseOfTheFuture;
 use App\MemetoPattern\MemetoTestDriven;
 use App\PrototypePattern\PrototypeTestDriven;
+use App\VisitorPattern\SalaryReportTestDriven;
 
 // new DuckSimulation();
 // new AdventureGame();
@@ -57,4 +58,5 @@ use App\PrototypePattern\PrototypeTestDriven;
 // new DuckPondSimulator();
 // new HouseOfTheFuture();
 // new MemetoTestDriven();
-new PrototypeTestDriven();
+// new PrototypeTestDriven();
+new SalaryReportTestDriven();
